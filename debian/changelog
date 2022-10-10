@@ -1,0 +1,152 @@
+libextutils-cchecker-perl (0.11-1) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ gregor herrmann ]
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+  * Remove Jonathan Yu from Uploaders. Thanks for your work!
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ Laurent Baillet ]
+  * fix lintian file-contains-trailing-whitespace warning
+
+  [ gregor herrmann ]
+  * debian/watch: use uscan version 4.
+
+  [ Debian Janitor ]
+  * Bump debhelper from deprecated 8 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
+
+  [ gregor herrmann ]
+  * Import upstream version 0.11.
+  * Update years of upstream and packaging copyright.
+  * Declare compliance with Debian Policy 4.5.1.
+  * Set Rules-Requires-Root: no.
+  * Annotate test-only build dependencies with <!nocheck>.
+  * Bump debhelper-compat to 13.
+  * Add patch to enable a test during autokgtests.
+    Module::Build looks for lib/ExtUtils/CChecker.pm which does not exist for
+    the installed package.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 16 Aug 2021 17:47:17 +0200
+
+libextutils-cchecker-perl (0.10-1.1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Thu, 07 Jan 2021 16:39:37 +0100
+
+libextutils-cchecker-perl (0.10-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ gregor herrmann ]
+  * debian/control: remove Nicholas Bamber from Uploaders on request of
+    the MIA team.
+  * Strip trailing slash from metacpan URLs.
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ Nuno Carvalho ]
+  * New upstream release
+  * debian/control:
+    + update standards version to 3.9.6
+    + add explicit libmodule-build-perl dependency
+    + drop build dependencies on libtest-pod*
+    + add "Testsuite: autopkgtest-pkg-perl"
+  * debian/copyright: update upstream copyright years
+  * Add debian/upstream/metadata information file
+
+ -- Nuno Carvalho <smash@cpan.org>  Fri, 05 Jun 2015 05:40:49 +0100
+
+libextutils-cchecker-perl (0.09-1) unstable; urgency=low
+
+  [ Salvatore Bonaccorso ]
+  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
+  * Change search.cpan.org based URIs to metacpan.org based URIs
+
+  [ gregor herrmann ]
+  * New upstream release.
+  * Drop spelling.patch, merged upstream.
+  * Update years of upstream and packaging copyright.
+  * Declare compliance with Debian Policy 3.9.5.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 21 Dec 2013 22:41:27 +0100
+
+libextutils-cchecker-perl (0.08-1) unstable; urgency=low
+
+  [ Ansgar Burchardt ]
+  * debian/control: Convert Vcs-* fields to Git.
+
+  [ gregor herrmann ]
+  * New upstream release.
+  * debian/copyright: update to Copyright-Format 1.0.
+  * Update years of upstream copyright.
+  * Bump Standards-Version to 3.9.3 (no changes).
+  * Add a patch to fix a spelling mistake in the POD.
+  * Add /me to Uploaders.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 07 May 2012 18:44:55 +0200
+
+libextutils-cchecker-perl (0.07-1) unstable; urgency=low
+
+  [ Nicholas Bamber ]
+  * New upstream release
+  * Updated build dependencies
+
+  [ Salvatore Bonaccorso ]
+  * Bump Standards-Version to 3.9.2 (no changes).
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Sat, 16 Apr 2011 15:39:42 +0100
+
+libextutils-cchecker-perl (0.06-1) unstable; urgency=low
+
+  * Added myself to Uploaders
+  * New upstream release
+  * Email change: Ansgar Burchardt -> ansgar@debian.org
+  * Refreshed copyright using experimental version of dh-make-perl
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Sat, 29 Jan 2011 23:04:01 +0000
+
+libextutils-cchecker-perl (0.05-1) unstable; urgency=low
+
+  * New upstream release.
+  * Use debhelper compat level 8, drop manual selection of build system in
+    debian/rules as Build.PL is now the default.
+  * Drop build-dep on perl (>= 5.10) | libmodule-build-perl. Stable already
+    has a recent enough version of perl.
+  * debian/copyright: Refer to /usr/share/common-licenses/GPL-1; refer to
+    "Debian systems" instead of "Debian GNU/Linux systems".
+  * Bump Standards-Version to 3.9.1.
+  * Update my email address.
+
+ -- Ansgar Burchardt <ansgar@debian.org>  Sun, 05 Dec 2010 12:33:19 +0100
+
+libextutils-cchecker-perl (0.04-1) unstable; urgency=low
+
+  * New upstream release.
+  * Use Build.PL.
+  * Add myself to Uploaders.
+
+ -- Ansgar Burchardt <ansgar@43-1.org>  Sun, 27 Jun 2010 16:44:41 +0900
+
+libextutils-cchecker-perl (0.03-1) unstable; urgency=low
+
+  * New upstream release
+  * Use new 3.0 (quilt) source format
+  * Remove spelling patches, applied upstream
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Mon, 08 Mar 2010 13:11:31 -0500
+
+libextutils-cchecker-perl (0.02-1) unstable; urgency=low
+
+  * Initial Release (Closes: #567603)
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Tue, 02 Feb 2010 11:26:27 -0500

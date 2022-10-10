@@ -1,0 +1,26 @@
+Source: libextutils-cchecker-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Ansgar Burchardt <ansgar@debian.org>,
+           gregor herrmann <gregoa@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               libmodule-build-perl
+Build-Depends-Indep: libtest-fatal-perl <!nocheck>,
+                     perl
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libextutils-cchecker-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libextutils-cchecker-perl.git
+Homepage: https://metacpan.org/release/ExtUtils-CChecker
+Rules-Requires-Root: no
+
+Package: libextutils-cchecker-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends}
+Description: helper module for handling C headers and libraries
+ ExtUtils::CChecker is a Perl module designed to check for the presence of
+ libraries and C headers required for building the remainder of your package.
+ It is particularly useful for packages containing Perl bindings to existing C
+ libraries.

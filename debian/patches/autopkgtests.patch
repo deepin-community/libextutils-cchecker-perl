@@ -1,0 +1,42 @@
+Description: Set dist_version for new_module_build() calls.
+ Only with module_name, M::B expects lib/ExtUtils/CChecker.pm
+ which is not around at autopkgtest time (unless we put it there).
+Origin: vendor
+Forwarded: not-needed
+Author: gregor herrmann <gregoa@debian.org>
+Last-Update: 2021-08-16
+
+--- a/t/04module_build.t
++++ b/t/04module_build.t
+@@ -10,9 +10,13 @@
+ 
+ my $cc = ExtUtils::CChecker->new;
+ 
++# Module::Build tries dist_version_from() from lib/ExtUtils/CChecker.pm
++# when called just with module_name()
++my $dist_version = $ExtUtils::CChecker::VERSION;
++
+ # default configuration
+ {
+-   my $build = $cc->new_module_build( module_name => "ExtUtils::CChecker" );
++   my $build = $cc->new_module_build( module_name => "ExtUtils::CChecker", dist_version => $dist_version );
+ 
+    isa_ok( $build, "Module::Build", '$build' );
+ 
+@@ -25,7 +29,7 @@
+ 
+ # stored configuration
+ {
+-   my $build = $cc->new_module_build( module_name => "ExtUtils::CChecker" );
++   my $build = $cc->new_module_build( module_name => "ExtUtils::CChecker", dist_version => $dist_version );
+ 
+    is_deeply( $build->include_dirs,         [ "/usr/include/foo" ],
+       '$build->include_dirs' );
+@@ -39,6 +43,7 @@
+ {
+    my $build = $cc->new_module_build( 
+       module_name => "ExtUtils::CChecker",
++      dist_version => $dist_version,
+       include_dirs => [ "/usr/include/bar" ],
+       extra_compiler_flags => [ "-DHAVE_BAR" ],
+       extra_linker_flags => [ "-lbar" ],
